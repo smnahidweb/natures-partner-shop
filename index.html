@@ -12,7 +12,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                
+                'primary-lab-color': '#179800',
+                'hero-bg': '#f8ebd8',
+              },
+            },
+          },
+        }
+      </script>
 
     <!-- internal style if i need -->
      <style>
@@ -22,16 +35,113 @@
          font-weight: normal;
          font-style: normal;
 }
+@media  screen and (max-width:700px) {
+   #search,#cart,#login,#register{
+    display: none;
+   }
+}
+
 
      </style>
 </head>
 <body class="sora-regular">
-<header class="container mx-auto">    
+<header class="bg-gradient-to-t from-[#f8ebd8] to-white">    
+<nav class="container mx-auto ">
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost hidden ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            
+          </div>
+          <a> <img src="c2-assets/logo-header.png" alt=""> </a> 
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Product </a></li>
+            
+            </li>
+            <li><a>Services</a></li>
+            <li><a>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end space-x-5 ">
+         <i class="fa-solid fa-magnifying-glass lg:block" id="search"></i>  
+         <i class="fa-solid fa-cart-shopping lg:block   " id="cart"></i>
+         <button class="btn btn-outline btn-success text-black lg:block" id="login">Log in</button>
+         <button class="btn bg-primary-lab-color text-white" id="register" >Register</button>
+         
+                <i class="fa-solid fa-bars lg:hidden sm:block border border-b-green-500 "></i>     
+      </div>
+</nav>
+<hr class="text-green-500 lg:hidden">
+
+<!-- Banner section -->
+ <section class="container mx-auto my-7  text-black">
+     <!-- hero-title -->
+<div class="text-5xl  text-center font-bold ">
+   
+     <h1>Freshness <span class="text-green-700">You Can </span><br>
+       <span class="text-green-700"> Count</span> On, Prices You’ll Love!</h1>
+</div>
+<!-- hero-subtitle -->
+<div class="text-center mx-auto my-8 ">
+    <p>Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!</p>
+</div>
+<!-- Hero Image section -->
+<div >
+<img class="container mx-auto " src="c2-assets/hero-vegetables.png" alt="">
+</div>
+ </section>
 
 </header>
 
 <main class="container mx-auto">
-
+<h2 class="text-green-600 text-3xl font-semibold mb-10">Services</h2>
+<!-- services card is started -->
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+<!-- first card -->
+<div class="card bg-base-100  shadow-xl bg-hero-bg">
+    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md mt-4">
+        <img src="c2-assets/service.png" alt="24/7 Services" class="">
+    </div>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">24/7 Services </h2>
+      <p>We are open 24/7, providing uninterrupted service to meet your needs anytime, day or night!</p>
+    </div>
+  </div>
+  <div class="card bg-base-100  shadow-xl bg-hero-bg">
+    <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md m-4">
+        <img src="c2-assets/delivery.png" alt="24/7 Services" class="">
+    </div>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">Fast Delivery </h2>
+      <p>We are open 24/7, Get your orders quickly, right to your doorstep! </p>
+    </div>
+  </div>
+ <div class="card bg-base-100  shadow-xl bg-hero-bg">
+    <div class="bg-white rounded-full w-25 h-25 flex items-center justify-center mx-auto shadow-md mt-4">
+        <img src="c2-assets/healthy.png" alt="24/7 Services" class="">
+    </div>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">Healthy Product </h2>
+      <p>We are open 24/7, providing Fresh, natural, and high-quality items for your well-being! </p>
+      
+    </div>
+  </div>
+</div>
 </main>
 
 <footer class="container mx-auto">
