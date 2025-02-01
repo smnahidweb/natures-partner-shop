@@ -16,6 +16,31 @@
         tailwind.config = {
           theme: {
             extend: {
+              animation: {
+        'glow': 'glow 4s ease-in-out infinite', // Looping shimmer effect
+        'wave': 'wave 6s ease-in-out infinite',
+      },
+      keyframes: {
+        glow: {
+         '0%': { opacity: 0.5, transform: 'translateY(0px) scale(1)' },
+          '25%': { opacity: 0.7, transform: 'translateY(2px) scale(1.02)' },
+          '50%': { opacity: 1, transform: 'translateY(5px) scale(1.05)' },
+          '75%': { opacity: 0.7, transform: 'translateY(2px) scale(1.02)' },
+          '100%': { opacity: 0.5, transform: 'translateY(0px) scale(1)' },
+        },
+        wave: {
+          '0%': { transform: 'translateY(0px)' },
+          '25%': { transform: 'translateY(-3px)' },
+          '50%': { transform: 'translateY(3px)' },
+          '75%': { transform: 'translateY(-3px)' },
+          '100%': { transform: 'translateY(0px)' },
+        },
+      },
+
+      wiggle: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(10px) rotate(2deg)' },
+        },
               colors: {
                 clifford: '#da373d',
                 
@@ -80,7 +105,6 @@
           <ul class="menu menu-horizontal px-1">
             <li><a>Product </a></li>
             
-            </li>
             <li><a>Services</a></li>
             <li><a>Contact Us</a></li>
           </ul>
@@ -99,17 +123,17 @@
 <!-- Banner section -->
  <section class="container mx-auto my-7  text-black">
      <!-- hero-title -->
-<div class="text-5xl  text-center font-bold ">
+<div class="text-5xl  text-center font-bold  animate-glow ">
    
      <h1>Freshness <span class="text-green-700">You Can </span><br>
        <span class="text-green-700"> Count</span> On, Prices You’ll Love!</h1>
 </div>
 <!-- hero-subtitle -->
-<div class="text-center mx-auto my-8 ">
-    <p>Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!</p>
+<div class="text-center mx-auto my-8 lg:w-[500px] animate-wave">
+    <p class="">Shop your daily essentials at unbeatable prices.From fresh produce to pantry staples, we’ve got you covered every day!</p>
 </div>
 <!-- Hero Image section -->
-<div >
+<div class="animate-wiggle">
 <img class="container mx-auto " src="c2-assets/hero-vegetables.png" alt="">
 </div>
  </section>
@@ -125,7 +149,7 @@
   <div class="container mx-auto grid grid-cols-1 gap-4 lg:grid-cols-3">
   <!-- first card -->
   <div class="card bg-base-100  shadow-xl bg-hero-bg">
-      <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md mt-4">
+      <div class="bg-white rounded-full w-36 h-36 flex items-center justify-center mx-auto shadow-md mt-4">
           <img src="c2-assets/service.png" alt="24/7 Services" class="">
       </div>
       <div class="card-body items-center text-center">
@@ -134,7 +158,7 @@
       </div>
     </div>
     <div class="card bg-base-100  shadow-xl bg-hero-bg">
-      <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md m-4">
+      <div class="bg-white rounded-full w-36 h-36 flex items-center justify-center mx-auto shadow-md m-4">
           <img src="c2-assets/delivery.png" alt="24/7 Services" class="">
       </div>
       <div class="card-body items-center text-center">
@@ -143,7 +167,7 @@
       </div>
     </div>
    <div class="card bg-base-100  shadow-xl bg-hero-bg">
-      <div class="bg-white rounded-full w-25 h-25 flex items-center justify-center mx-auto shadow-md mt-4">
+      <div class="bg-white rounded-full w-36 h-36 flex items-center justify-center mx-auto shadow-md mt-4">
           <img src="c2-assets/healthy.png" alt="24/7 Services" class="">
       </div>
       <div class="card-body items-center text-center">
@@ -156,7 +180,7 @@
 </section>
 
 <!-- popular section -->
-<div class="my-10 bg-hero-bg mt-10">
+<div class="my-10 bg-hero-bg mt-10 pb-32">
  <div class="container mx-auto">
   <h2 class="text-green-600 text-2xl font-semibold pt-28 mb-7">Popular Products</h2>
  </div>
@@ -203,7 +227,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/tomato.png" alt="">
        </div>
     
        <div>
@@ -211,8 +235,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
           <h2 class="p-1">4.5</h2>      
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Tomato 1kg</h2>
+        <p>$49.99</p>
        </div>
     
     </div>
@@ -220,7 +244,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/potato.png" alt="">
        </div>
     
        <div>
@@ -228,8 +252,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" /> 
           <h2 class="p-1">4.5</h2>     
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Potato 1kg</h2>
+        <p>$20.99</p>
        </div>
     
     </div>
@@ -237,7 +261,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/potato.png" alt="">
        </div>
     
        <div>
@@ -245,8 +269,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
           <h2 class="p-1">4.5</h2>      
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Potato 0.5kg</h2>
+        <p>$10.99</p>
        </div>
     
     </div>
@@ -254,7 +278,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/tomato.png" alt="">
        </div>
     
        <div>
@@ -262,8 +286,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
           <h2 class="p-1">4.5</h2>      
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Tomato 0.5kg</h2>
+        <p>$25.99</p>
        </div>
     
     </div>
@@ -279,8 +303,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" /> 
           <h2 class="p-1">4.5</h2>     
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Onion 0.5kg</h2>
+        <p>$30.99</p>
        </div>
     
     </div>
@@ -296,8 +320,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" /> 
           <h2 class="p-1">4.5</h2>     
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Onion 2kg</h2>
+        <p>$70.99</p>
        </div>
     
     </div>
@@ -305,7 +329,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/potato.png" alt="">
        </div>
     
        <div>
@@ -313,8 +337,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" /> 
           <h2 class="p-1">4.5</h2>     
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Potato 2kg</h2>
+        <p>$45.99</p>
        </div>
     
     </div>
@@ -322,7 +346,7 @@
       <!-- products-card 1-->
        <div class="bg-hero-bg p-1 mr-3 rounded-md">
         <!-- images-onion -->
-        <img class="mt-5" src="c2-assets/onion.png" alt="">
+        <img class="mt-5" src="c2-assets/tomato.png" alt="">
        </div>
     
        <div>
@@ -330,8 +354,8 @@
           <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" /> 
           <h2 class="p-1">4.5</h2>     
         </div>
-        <h2>Oninon 1kg</h2>
-        <p>$39.99</p>
+        <h2>Tomato 2kg</h2>
+        <p>$99.99</p>
        </div>
     
     </div>
@@ -356,16 +380,16 @@
 <div class=" container mx-auto">
   <h2 class="text-green-600 font-bold text-2xl mb-10 ">Arrival and Offer</h2>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4 container mx-auto justify-around rounded-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-4 container mx-auto justify-around rounded-lg">
 <!-- arrival product -->
- <div class="bg-arrival-bg rounded-lg">
+ <div class="bg-arrival-bg rounded-lg ">
 
 <div class="flex gap-2">
   <div class="p-3">
     <!-- description -->
      <img class="ml-5 mt-5" src="c2-assets/dawat-logo.png" alt="">
      <button class="btn bg-arrival-btn ml-16 mt-5 text-white ">Cook Exotic Dishes</button>
-     <h1 class="text-2xl text-white font-bold ml-16 mt-5">Up to 20% off</h1>
+     <h1 class="text-2xl text-white ml-16 mt-5">Up to <span class="font-bold">20% off</span></h1>
   
   </div>
   
@@ -378,13 +402,13 @@
  </div>
  <!-- arrival-card 2 -->
  
-<div class="bg-arrival-bg2 rounded-lg">
-  <div class="flex gap-2 justify-around" >
+<div class="bg-arrival-bg2 rounded-lg lg:w-3/4">
+  <div class="flex gap-4 " >
  
     <div>
       <img class="ml-16 mt-5" src="c2-assets/india-gate-logo.png" alt="">
       <button class="btn bg-indian-btn ml-16 mt-5 text-white">World’s No.1 Rice</button>
-      <h1 class="text-2xl text-white font-bold ml-16 mt-5">Up to 40% off</h1>
+      <h1 class="text-2xl text-white ml-16 mt-5">Up to <span class="font-bold">40% off</span></h1>
   
     </div>
   
